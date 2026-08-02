@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://verbit.readme.io/docs/getting-started
+spec_type: Webhooks
+surfaces:
+  - name: Job webhooks
+    transport: http-callback
+    description: >-
+      Configure a webhook URL in a profile or per-job to receive automatic
+      notifications instead of polling GET /job/info. Notifications fire on job
+      completion and when a draft transcription becomes available.
+    events:
+      - name: job.completed
+        trigger: Transcription job finished processing (status "Completed").
+      - name: draft_ready
+        trigger: 'A draft (machine-generated) transcription is available (draft_ready: true).'
+  - name: Live streaming (WebSocket)
+    transport: websocket
+    url: wss://speech.verbit.co/ws
+    description: >-
+      Real-time streaming speech recognition. Client streams media and receives
+      "Transcript" and/or "Caption" response messages over a WebSocket; a
+      flow-control End-of-Stream message ({ "event": "EOS" }) signals stream end.
+    events:
+      - name: transcript
+        trigger: get_transcript response messages during a live session.
+      - name: caption
+        trigger: get_captions response messages during a live session.
+notes: >-
+  Verbit documents an event surface (HTTP webhooks for async job completion plus
+  a real-time WebSocket streaming protocol) but does not publish a machine-
+  readable AsyncAPI document. Captured as a webhook/event catalog; no AsyncAPI
+  spec was fabricated.

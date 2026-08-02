@@ -1,9 +1,31 @@
 aid: verbit
 name: VerbIT
-description: 'VerbIT is a company surfaced as a portfolio company of hv-capital, sapphire-ventures and
-  added to the API Evangelist network as a stub for enrichment. Sector: ai-enterprise-software. This profile
-  is a lead awaiting the enrichment pipeline.'
+description: >-
+  Verbit is an AI-based transcription and captioning company whose platform pairs
+  a state-of-the-art automatic speech recognition (ASR) engine with professional
+  human review to deliver accurate transcripts and captions for legal, courtroom,
+  media & entertainment, higher education, corporate, and government use cases.
+  Verbit exposes a developer platform (Verbit Platform API v3) covering live
+  booking and real-time captioning over WebSocket, post-production transcription
+  jobs, a Caption Control API for managing live sessions, a Search API for
+  indexing caption/transcript assets, and an Insights (Gen V) API that generates
+  AI summaries, keywords, quizzes, and chapters. Authentication uses a short-lived
+  JWT bearer token minted from a customer API key. Backed by HV Capital and
+  Sapphire Ventures.
 url: https://raw.githubusercontent.com/api-evangelist/verbit/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://verbit.ai/wp-content/themes/verbit/images/logo-final2.svg
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -13,16 +35,101 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Ai Enterprise Software
-apis: []
+- Transcription
+- Captioning
+- Speech Recognition
+- Accessibility
+- Artificial Intelligence
+- Media
+apis:
+- name: Verbit Platform API
+  description: >-
+    Programmatic access to Verbit's transcription and captioning platform: live
+    booking / real-time captioning, post-production transcription jobs, caption
+    control, search, and AI insights.
+  humanURL: https://verbit.readme.io/
+  baseURL: https://api.verbit.co
+  properties:
+  - type: Documentation
+    url: https://verbit.readme.io/docs/getting-started
+  - type: APIReference
+    url: https://verbit.readme.io/reference
+  - type: Authentication
+    url: authentication/verbit-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/verbit-trust-center.yml
+- type: DomainSecurity
+  url: security/verbit-domain-security.yml
+- type: Compliance
+  url: https://verbit.ai/trust-data-policy/
 - type: Website
   url: https://verbit.ai/
+- type: DeveloperPortal
+  url: https://verbit.readme.io/
+- type: Documentation
+  url: https://verbit.readme.io/docs/getting-started
+- type: APIReference
+  url: https://verbit.readme.io/reference
+- type: GettingStarted
+  url: https://verbit.readme.io/docs/getting-started
+- type: Authentication
+  url: authentication/verbit-authentication.yml
+- type: Blog
+  url: https://verbit.ai/blog/
+- type: GitHubOrganization
+  url: https://github.com/verbit-ai
+- type: SignUp
+  url: https://users.verbit.co/
+- type: Pricing
+  url: https://verbit.ai/pricing-package/
+- type: TermsOfService
+  url: https://verbit.ai/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://verbit.ai/privacy-policy/
+- type: Support
+  url: https://verbit.ai/contact-us/
+- type: StatusPage
+  url: https://verbit.statuspal.io/
+- type: ChangeLog
+  url: changelog/verbit-changelog.yml
+- type: Deprecation
+  url: lifecycle/verbit-lifecycle.yml
+- type: Lifecycle
+  url: lifecycle/verbit-lifecycle.yml
+- type: LLMsTxt
+  url: llms/verbit-llms.txt
+- type: Packages
+  url: packages/verbit-packages.yml
+- type: SDKs
+  url: packages/verbit-packages.yml
+- type: ErrorCatalog
+  url: errors/verbit-error-codes.yml
+- type: Sandbox
+  url: sandbox/verbit-sandbox.yml
+- type: Components
+  url: components/verbit-components.yml
+- type: DataModel
+  url: data-model/verbit-data-model.yml
+- type: Webhooks
+  url: asyncapi/verbit-webhooks.yml
+- type: Conformance
+  url: conformance/verbit-conformance.yml
+- type: Conventions
+  url: conventions/verbit-conventions.yml
+- type: Idempotency
+  url: conventions/verbit-conventions.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v1

@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/verbit-ai
+packages:
+  - language: python
+    registry: github
+    name: verbit-streaming-python-sdk
+    url: https://github.com/verbit-ai/verbit-streaming-python-sdk
+    install: pip install git+https://github.com/verbit-ai/verbit-streaming-python-sdk.git
+    official: true
+    description: >-
+      Python client for streaming media to and receiving responses from Verbit's
+      Streaming Speech Recognition service over a WebSocket connection.
+notes: >-
+  Verbit publishes a first-party Python streaming SDK on their GitHub org
+  (github.com/verbit-ai). No first-party package was found published on PyPI,
+  npm, Maven Central, NuGet, RubyGems, Packagist, or crates.io as of this pass.

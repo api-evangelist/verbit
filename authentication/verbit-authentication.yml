@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: https://verbit.readme.io/docs/authentication
+docs: https://verbit.readme.io/docs/authentication
+summary:
+  types: [http, apiKey]
+  http_scheme: bearer
+  bearer_format: JWT
+  api_key_in: [body]
+  oauth2_flows: []
+schemes:
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    bearerFormat: JWT
+    description: >-
+      Short-lived JSON Web Token (JWT) passed in the Authorization header as
+      "Authorization: bearer <token>". The token is minted by POSTing the
+      customer api_key to the Verbit auth service and expires 24 hours after
+      creation.
+    token_endpoint: https://users.verbit.co/api/v1/auth
+    token_request: 'POST {"data": {"api_key": "<API-KEY>"}}'
+    token_response_field: token
+    token_ttl_seconds: 86400
+    sources: [https://verbit.readme.io/docs/authentication]
+  - name: legacyApiToken
+    type: apiKey
+    in: query
+    name: api_token
+    description: >-
+      Legacy per-request API token supported for existing post-production API
+      integrations. Still valid, but new integrations should use the JWT bearer
+      flow. Post-production APIs may also use the JWT scheme.
+    sources: [https://verbit.readme.io/docs/api-token]
+notes: >-
+  API key generation requires the Admin role on the Verbit platform. A separate
+  order-level / permanent customer token is used for the streaming WebSocket
+  endpoint (wss://speech.verbit.co/ws). No OAuth2 authorization/token scope
+  surface is documented (access is governed by platform RBAC roles such as
+  customer_admin / customer_content_manager), so no scopes/ artifact is emitted.

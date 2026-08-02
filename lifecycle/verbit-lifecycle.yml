@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://verbit.readme.io/docs/getting-started
+versioning:
+  scheme: major-version
+  current: v3
+  notes: >-
+    Platform API is documented as v3; v4 exists (e.g. POST /job/request-upload-url
+    is "Deprecated since v4. Use POST /job/add_asset instead."). Also historically
+    documented as v3/v4 on Apiary.
+deprecation:
+  policy_documented: true
+  evidence: >-
+    Individual endpoints are marked deprecated by version in the API reference
+    (e.g. "Deprecated since v4. Use POST /job/add_asset instead.").
+  docs: https://verbit.readme.io/reference/post_job-request-upload-url
+deprecated_operations:
+  - post_job-request-upload-url  # Deprecated since v4; use post_job-add-asset
+sla:
+  url: null
+  uptime_target: null
+status_page: https://verbit.statuspal.io/
+changelog: https://verbit.readme.io/changelog
+notes: >-
+  Status and known issues are published at verbit.statuspal.io (referenced from
+  the API error documentation). Deprecation is communicated per-endpoint by
+  major version in the readme.io reference.

@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: searched
+source: live /.well-known/ probes of apis.yml + docs hosts
+hosts:
+  - host: https://verbit.ai
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://api.verbit.co
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+  - host: https://users.verbit.co
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+notes: >-
+  No /.well-known/ discovery documents are published (all 404, or 403 on the
+  auth host). Verbit uses a custom JWT auth flow (POST /api/v1/auth) rather
+  than OIDC/OAuth discovery metadata. Recorded for auditability; no WellKnown
+  or SecurityTxt pointer is emitted because nothing returned 200.

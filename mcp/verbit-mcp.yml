@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: https://verbit.readme.io/llms.txt
+server:
+  name: verbit
+  transport: http
+  url: null
+tools:
+  - name: list_orders
+    description: Retrieve a list of live orders filtered by criteria.
+    source_operation: https://verbit.readme.io/reference/ordersrouterget_orders
+  - name: create_order
+    description: Book a new live transcription/captioning order.
+    source_operation: https://verbit.readme.io/reference/ordersroutercreate_order
+  - name: get_order
+    description: Retrieve a single order by id.
+    source_operation: https://verbit.readme.io/reference/ordersrouterget_order
+  - name: cancel_order
+    description: Cancel an existing order.
+    source_operation: https://verbit.readme.io/reference/ordersrouterupdate_order_status
+  - name: get_order_transcript
+    description: Get a link to an order's transcript.
+    source_operation: https://verbit.readme.io/reference/ordersrouterget_order_transcript
+  - name: create_download
+    description: Prepare an order's captioning/transcription for download in chosen formats.
+    source_operation: https://verbit.readme.io/reference/deliveriesroutercreate_delivery
+  - name: create_job
+    description: Create a new post-production transcription job.
+    source_operation: https://verbit.readme.io/reference/post_job-new
+  - name: get_job_info
+    description: Get status and metadata for a job.
+    source_operation: https://verbit.readme.io/reference/get_job-info
+  - name: get_job_caption
+    description: Download the completed transcription/caption for a job.
+    source_operation: https://verbit.readme.io/reference/get_job-get-caption
+  - name: get_insights
+    description: Retrieve AI-generated insights for a job or live session.
+    source_operation: https://verbit.readme.io/reference/get_insights_api_v2_insights_get
+notes: >-
+  No official hosted/remote Verbit MCP server was found (docs, npm
+  @modelcontextprotocol, MCP registries). This is a CANDIDATE tool list derived
+  from documented Verbit operations to seed a future MCP server; the endpoints
+  are real (readme.io reference slugs) but no server is deployed.

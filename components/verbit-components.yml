@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: https://verbit.readme.io/reference/get_job-get-widget-code
+families:
+  - name: Interactive Transcript Widget
+    kind: embeddable-web-widget
+    description: >-
+      Embeddable HTML transcript widget with synchronized text highlighting,
+      full-text search, click-to-seek navigation, responsive design, and
+      customizable appearance (JS/CSS). Can sync with an existing video/audio
+      element or ship with a built-in HTML5 player.
+    operations:
+      - get_job-get-widget-code
+      - get_job-get-offline-widget
+    variants:
+      - online widget code (get_job-get-widget-code)
+      - offline self-contained widget bundle / ZIP (get_job-get-offline-widget)
+  - name: Smart Player
+    kind: hosted-accessible-player
+    description: >-
+      Accessible video player with interactive transcripts, synchronized
+      captions, audio-description support, keyboard accessibility, and
+      screen-reader compatibility. Created and retrieved per completed job.
+    operations:
+      - post_job-smart-player
+      - get_job-smart-player
+notes: >-
+  Distinct from the server-side streaming SDK in packages/. These are
+  client-side embeddable/hosted UI surfaces generated per transcription job.

@@ -1,0 +1,63 @@
+generated: '2026-07-21'
+method: searched
+source: https://verbit.readme.io/docs/errors-explanation
+format: custom
+envelopes:
+  - name: immediate_request_error
+    description: >-
+      Returned immediately during API request validation.
+    shape: '{ "ErrorType": "ERROR_TYPE_STRING", "ErrorComment": "Error explanation" }'
+  - name: processing_error
+    description: >-
+      Returned in the errors[] array of the GET /job/info response when a job
+      status is "Failure".
+    shape: '{ "errors": [ { "code": "error_code", "message": "Error message" } ] }'
+request_errors:
+  - type: BAD_API_TOKEN
+    meaning: Invalid API token
+  - type: MISSING_PARAMETER
+    meaning: Required parameter omitted
+  - type: INVALID_OPTION
+    meaning: Parameter value incorrect / unsupported
+  - type: INVALID_QUERY
+    meaning: Invalid parameter combination (also "file already uploaded" / "media already uploaded" — safe to ignore on retry)
+  - type: INVALID_URL
+    meaning: URL invalid or inaccessible
+  - type: ITEM_NOT_FOUND
+    meaning: Requested item not found
+  - type: UUID_ALREADY_EXISTS
+    meaning: Race condition in UUID generation on /job/new — retry with the same parameters (retry-safe)
+processing_errors:
+  - code: failed_transcoding
+    message: Transcoding error
+    cause: Corrupted media file or unsupported format
+    remediation: Verify file integrity, check with ffmpeg, convert to a supported format
+  - code: failed_transcribing
+    message: Transcribing error
+    cause: System failed to process the audio content (sound quality / content)
+    remediation: Verify audio is audible and clear; contact support if it still fails
+  - code: bad_audio_quality
+    message: Audio is hard to recognize
+    remediation: Re-record with better equipment or conditions
+  - code: no_speech
+    message: No speech detected
+    remediation: Verify the media file contains spoken content
+  - code: media_upload_error
+    message: Media file is unreachable
+    remediation: Verify the media URL is accessible and not expired
+  - code: exceeded_allowed_duration
+    message: File exceeded maximum length of %{hours} hours
+    remediation: Split long recordings into smaller segments
+  - code: audio_minutes_limit
+    message: Max profile limit of audio minutes reached
+    remediation: Contact support to increase limits or upgrade the account
+  - code: audio_minutes_limit_on_account
+    message: Max account limit of audio minutes reached
+    remediation: Contact support to increase limits or upgrade the account
+  - code: foreign_language
+    message: Unsupported language
+    remediation: Verify media language and select the corresponding language / profile
+notes: >-
+  Verbit is not RFC 9457 (application/problem+json) — it publishes two custom
+  error envelopes (immediate request errors and job processing errors). Status
+  and known issues are posted at https://verbit.statuspal.io/.

@@ -1,0 +1,57 @@
+generated: '2026-07-21'
+method: derived
+source: https://verbit.readme.io/llms.txt
+entities:
+  - name: Order
+    description: A live booking for transcription/captioning of an event, with input (media source, language, schedule) and output (product/tier/target languages).
+    key_fields: [name, client_transaction_id, input, output, status, recurrence_id]
+    statuses: [created, pending_approval, pending_execution, ready_to_connect, in_progress, completed, declined, canceled, execution_error, returned]
+  - name: Job
+    description: A post-production transcription job created on Verbit's server; media is uploaded then processed.
+    key_fields: [job_name, external_id, profile, job_status, draft_ready, errors]
+    statuses: [Pending, In Progress, Completed, Canceled, Failure]
+  - name: Asset
+    description: A media file, backup record, notes attachment, or transcription uploaded to a job via pre-signed URL.
+    key_fields: [asset_id, file_name, asset_url, upload_url]
+  - name: Delivery
+    description: A download request that renders an order's captioning/transcription into requested file formats/languages.
+    key_fields: [download_id, order_ids, formats, languages, status]
+  - name: Insight
+    description: AI-generated content (summaries, keywords, quizzes, chapters) for a job or live session, via the Insights API.
+    key_fields: [job_id, session_id, insights]
+  - name: Session
+    description: A live captioning session managed via the Caption Control API (upstream, placement, duration, connection plan).
+    key_fields: [session_id, upstream, caption_placement, connection_plan]
+  - name: SmartPlayer
+    description: An accessible hosted player with interactive transcript/captions generated per completed job.
+    key_fields: [job_id, video_source, title]
+relationships:
+  - from: Order
+    to: Delivery
+    type: has_many
+    via: order_ids
+  - from: Order
+    to: Order
+    type: has_many
+    via: recurrence_id
+    note: recurring event series (RRULE)
+  - from: Job
+    to: Asset
+    type: has_many
+    via: asset_ids
+  - from: Job
+    to: Insight
+    type: has_many
+    via: job_id
+  - from: Session
+    to: Insight
+    type: has_many
+    via: session_id
+  - from: Job
+    to: SmartPlayer
+    type: has_one
+    via: job_id
+notes: >-
+  Derived from the documented object reference and API operations (readme.io
+  llms.txt). No machine-readable OpenAPI is published by Verbit, so field lists
+  reflect the documented request/response shapes rather than a captured schema.

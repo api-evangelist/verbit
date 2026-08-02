@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://verbit.readme.io/docs/getting-started
+separation:
+  model: sandbox-vs-live
+  description: >-
+    API integration can be tested using a sandbox token against a sandbox API
+    URL, separate from production. Authorization is by an api_token found on the
+    Verbit profile; a sandbox token exercises the sandbox environment.
+simulation:
+  description: >-
+    In sandbox mode no real transcription processing occurs. Jobs stay
+    "In Progress" by default; completion and failure can be simulated.
+  triggers:
+    - parameter: finish_in
+      operation: post_job-perform-transcription
+      effect: Simulate job completion after the specified interval.
+    - parameter: finish_with_error
+      operation: post_job-perform-transcription
+      effect: Simulate a job failure.
+notes: >-
+  Verbit publishes a documented sandbox environment for integration testing.
+  No fixed magic test values (card numbers / identifiers) apply — this is a
+  transcription/captioning API; sandbox behavior is controlled via the
+  finish_in / finish_with_error simulation parameters on perform_transcription.

@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: searched
+source: https://verbit.readme.io/changelog
+scheme: dated-entries
+url: https://verbit.readme.io/changelog
+entries:
+  - title: Welcome to verbit
+    author: Roman Himmelreich
+    date: null
+    breaking: false
+    highlights: >-
+      Introduces the Verbit developer hub and documentation for the Verbit
+      platform API services.
+notes: >-
+  Verbit maintains a public dated changelog on its readme.io developer hub. Only
+  the introductory entry is currently surfaced publicly; endpoint-level version
+  changes (e.g. v4 deprecations) are documented inline in the API reference.

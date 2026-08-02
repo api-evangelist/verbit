@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+source: https://verbit.readme.io/docs/getting-started
+authentication:
+  style: jwt-bearer
+  header: 'Authorization: bearer <JWT>'
+  token_endpoint: https://users.verbit.co/api/v1/auth
+  token_ttl_seconds: 86400
+  ref: authentication/verbit-authentication.yml
+idempotency:
+  supported: true
+  mechanism: client-supplied unique key
+  field: client_transaction_id
+  scope: order creation (Create Order)
+  description: >-
+    Each order carries a client_transaction_id — "your internal identifier... This
+    needs to be unique for each order you create" — which de-duplicates order
+    creation. On the /job/new endpoint a "UUID already exists" collision is
+    explicitly retry-safe ("Retry the request with the same parameters"), and
+    duplicate media/attachment uploads (INVALID_QUERY "already uploaded") can be
+    safely ignored on retry.
+pagination:
+  style: filter-based
+  description: >-
+    List orders (GET) supports filtering by order id, recurrence id, free text
+    and other fields. No explicit cursor/offset pagination parameters are
+    documented in the public reference.
+versioning:
+  style: major-version
+  current: v3
+  ref: lifecycle/verbit-lifecycle.yml
+error_envelope:
+  shapes:
+    - '{ "ErrorType": "...", "ErrorComment": "..." }'
+    - '{ "errors": [ { "code": "...", "message": "..." } ] }'
+  ref: errors/verbit-error-codes.yml
+recurrence:
+  standard: RFC 5545 RRULE
+  example: 'FREQ=WEEKLY;COUNT=2'
+streaming:
+  websocket: wss://speech.verbit.co/ws
+  end_of_stream: '{ "event": "EOS" }'
+rate_limit_signaling:
+  documented: false
+  notes: >-
+    Account/profile audio-minute limits are enforced (audio_minutes_limit,
+    audio_minutes_limit_on_account) but no HTTP rate-limit headers are documented.
+notes: Cross-links errors/, lifecycle/, authentication/.
