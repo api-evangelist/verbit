@@ -66,6 +66,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: MCPServer
+  url: mcp/verbit-mcp.yml
 - type: TrustCenter
   url: security/verbit-trust-center.yml
 - type: DomainSecurity
