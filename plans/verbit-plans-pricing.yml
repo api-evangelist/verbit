@@ -1,0 +1,53 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://verbit.ai/plans/
+sources:
+- https://verbit.ai/plans/
+- https://verbit.ai/pricing-package/
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: false
+note: No numeric price is published on the pricing page; Plans page lists product tiers across legal,
+  media, corporate, and education, each with 'Book a demo' only; no numeric prices shown. API access is
+  mentioned as a feature of custom plans.
+plan_count: 10
+plans:
+- name: Legal Transcription
+  price_text: Book a demo
+  period: none
+- name: Legal Capture
+  price_text: Book a demo
+  period: none
+- name: Legal Visor
+  price_text: Book a demo
+  period: none
+- name: Custom Plan
+  price_text: Book a demo
+  period: none
+- name: Captivate Live
+  price_text: Book a demo
+  period: none
+- name: Captivate Post & Post Plus
+  price_text: Book a demo
+  period: none
+- name: Venue Live
+  price_text: Book a demo
+  period: none
+- name: Enterprise Capture
+  price_text: Book a demo
+  period: none
+- name: Captioning & Transcription
+  price_text: Book a demo
+  period: none
+- name: Campus Complete
+  price_text: Book a demo
+  period: none
