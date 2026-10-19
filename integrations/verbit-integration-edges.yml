@@ -1,0 +1,24 @@
+edges:
+- partner_name: Cvent (own)
+  partner: cvent
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.cvent.com/apps/449008/verbit-for-cvent-smarter-captions-stronger-connections
+  mirror_of: cvent/integrations/cvent-integration-edges.yml
+  apps:
+  - 'Verbit for Cvent: Smarter Captions. Stronger Connections'
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Cvent app
+generated: '2026-10-18'
+method: searched
+source:
+- cvent/integrations/cvent-integration-edges.yml
+checked:
+- cvent/integrations/cvent-integration-edges.yml
