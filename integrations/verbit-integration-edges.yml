@@ -16,9 +16,27 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Cvent app
+- partner_name: Brightcove (own)
+  partner: brightcove
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.brightcove.com/partners/verbit-brightcove-captioning-integration
+  mirror_of: brightcove/integrations/brightcove-integration-edges.yml
+  apps:
+  - Verbit-Brightcove Captioning Integration
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Accessibility
 generated: '2026-10-18'
 method: searched
 source:
 - cvent/integrations/cvent-integration-edges.yml
 checked:
 - cvent/integrations/cvent-integration-edges.yml
+- https://marketplace.brightcove.com/llms.txt
