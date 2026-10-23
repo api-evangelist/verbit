@@ -33,6 +33,23 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Accessibility
+- partner_name: Adobe Premiere Pro (own)
+  partner: adobe-premiere
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://exchange.adobe.com/apps/cc/203133/verbit
+  mirror_of: adobe-premiere/integrations/adobe-premiere-integration-edges.yml
+  apps:
+  - Verbit
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Adobe Exchange Creative Cloud listing (Premiere Pro)
 generated: '2026-10-18'
 method: searched
 source:
@@ -40,3 +57,5 @@ source:
 checked:
 - cvent/integrations/cvent-integration-edges.yml
 - https://marketplace.brightcove.com/llms.txt
+- adobe-premiere/integrations/adobe-premiere-integration-edges.yml
+- brightcove/integrations/brightcove-integration-edges.yml
