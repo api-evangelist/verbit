@@ -64,6 +64,117 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-VerbIT is a company surfaced as a portfolio company of hv-capital, sapphire-ventures and added to the API Evangelist network as a stub for enrichment. Sector: ai-enterprise-software. This profile is a lead awaiting the enrichment pipeline.
+Verbit is an AI-based transcription and captioning company whose platform pairs a state-of-the-art automatic speech recognition (ASR) engine with professional human review to deliver accurate transcripts and captions for legal, courtroom, media & entertainment, higher education, corporate, and government use cases. Verbit exposes a developer platform (Verbit Platform API v3) covering live booking and real-time captioning over WebSocket, post-production transcription jobs, a Caption Control API for managing live sessions, a Search API for indexing caption/transcript assets, and an Insights (Gen V) API that generates AI summaries, keywords, quizzes, and chapters. Authentication uses a short-lived JWT bearer token minted from a customer API key. Backed by HV Capital and Sapphire Ventures.
 
-Backed by: hv-capital, sapphire-ventures — https://verbit.ai/
+**Areas:** Company · Ai Enterprise Software · Transcription · Captioning · Speech Recognition · Accessibility · Artificial Intelligence · Media
+
+## VerbIT on APIs.io
+
+Everything profiled for VerbIT is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/verbit/](https://apis.io/providers/verbit/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Verbit Platform API](https://apis.io/apis/verbit/verbit-platform-api/) — Programmatic access to Verbit's transcription and captioning platform: live booking / real-time captioning, post-production transcription jobs, caption…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Verbit Webhooks](https://apis.io/asyncapis/verbit/verbit-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [verbit](https://apis.io/servers/verbit/verbit/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Verbit Authentication](https://apis.io/security/verbit/verbit-authentication/)
+- [Verbit Domain Security](https://apis.io/security/verbit/verbit-domain-security/)
+- [Verbit Trust Center](https://apis.io/security/verbit/verbit-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Verbit Plans Pricing](https://apis.io/plans/verbit/verbit-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://verbit.ai/)
+- [Documentation](https://verbit.readme.io/docs/getting-started)
+- [Getting started](https://verbit.readme.io/docs/getting-started)
+- [API reference](https://verbit.readme.io/reference)
+- [Pricing](https://verbit.ai/pricing-package/)
+- [Sign up](https://users.verbit.co/)
+- [Support](https://verbit.ai/contact-us/)
+- [Blog](https://verbit.ai/blog/)
+- [Compliance](https://verbit.ai/trust-data-policy/)
+- [Terms of service](https://verbit.ai/terms-and-conditions/)
+- [Privacy policy](https://verbit.ai/privacy-policy/)
+- [GitHub](https://github.com/verbit-ai)
+- [Status](https://verbit.statuspal.io/)
+
+## API Evangelist rating
+
+**Kin Score 53.8** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 50.0 |
+| Developer ergonomics | 52.4 |
+| Access clarity | 78.9 |
+
+**Agent readiness 25.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | documented (partial credit) |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 27.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/verbit/](https://apis.io/providers/verbit/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for VerbIT: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/verbit/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
